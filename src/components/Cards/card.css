@@ -18,7 +18,7 @@
 
 .header-card h1{
     font-size: 25px;
-    font-weight: bold;
+    font-weight: 900;
 }
 
 .body-card{
@@ -29,13 +29,22 @@
     align-items: center;
 }
 
-.body-card img{
-    width: 250px;
+.body-card img {
+    object-fit: cover;
+    max-width: 250px;
+    min-width: 250px;
+    min-height: 270px;
     margin: 4%;
     margin-bottom: 15%;
     border: 1px solid;
     border-radius: 5%;
+    transition: transform 0.4s;
 }
+
+.body-card img:hover {
+    transform: scale(1.1);
+}
+
 
 .body-card button{
     width: 250px;
@@ -46,10 +55,14 @@
     border: 1px solid black;
     border-radius: 20px;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease;
+    transition: all 0.5s ease;
+    font-size: 20px;
+    font-weight: bold;
 }
 
 .body-card button:hover{
-    background-color: #442a1f;
+    background-color: #29130a;
     box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.2);
+    transform: scale(1.15);
 }
+

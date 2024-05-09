@@ -1,8 +1,14 @@
 import './card.css';
-// import brownie from "./../../assets/img/brownie.jpg";
 import { Loader } from '../Loader/Loader';
+import { useNavigate } from 'react-router-dom';
 
 export function Card( {receitas} ) {
+  const navigate = useNavigate();
+
+  const handleClick = (tipo) => {
+    navigate(tipo);
+  };
+
   return (
     <>
       {receitas === null ? (
@@ -15,9 +21,8 @@ export function Card( {receitas} ) {
                 <h1>{receita.nome}</h1>
               </div>
               <div className="body-card">
-              <img src={receita.imagem} className="Logo-imagem" alt="Logo" />
-                {console.log(receita.imagem)}
-                <button>Clique aqui!</button>
+                <img src={receita.imagemUrl} className='card-imagem' alt="Logo" />
+                <button onClick={() => handleClick(receita.tipo)}>Clique aqui!</button>
               </div>
             </article>
           </div>

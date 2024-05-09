@@ -15,9 +15,9 @@ export function Header() {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className=" links">
-            <Nav.Link href="#home">Precificação</Nav.Link>
-            <Nav.Link href="#link">Ingredientes</Nav.Link>
-            <Nav.Link href="#link">Preço final</Nav.Link>
+            <Nav.Link href="">Precificação</Nav.Link>
+            <Nav.Link href="ingredientes">Ingredientes</Nav.Link>
+            <Nav.Link href="precoFinal">Preço final</Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Container>
