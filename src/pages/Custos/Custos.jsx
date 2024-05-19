@@ -31,7 +31,7 @@ export function Custos(){
 
     function onSubmit(data) {
         axios
-            .put(`http://localhost:3001/custos/664a532ca0f3f3c984ece916`, data)
+            .put(`https://precificacaounivesp-4deb95d7eb80.herokuapp.com/custos/664a532ca0f3f3c984ece916`, data)
             .then((response) => {
                 console.log(data);
                 navigate(`/`);
@@ -43,7 +43,7 @@ export function Custos(){
     
     
     useEffect(() => {
-        axios.get(`http://localhost:3001/custos/664a532ca0f3f3c984ece916`)
+        axios.get(`https://precificacaounivesp-4deb95d7eb80.herokuapp.com/custos/664a532ca0f3f3c984ece916`)
             .then((response) => {
                 const data = response.data[0];
                 setCustos(data);

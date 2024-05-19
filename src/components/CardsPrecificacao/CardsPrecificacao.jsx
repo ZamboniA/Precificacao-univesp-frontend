@@ -40,7 +40,7 @@ export function CardsPrecificacao({ receitas, custos }) {
       const id = receitas[selectedRecipeIndex]._id;
       setIngredientes({ tipo, id });
   
-      axios.get(`http://localhost:3001/${tipo}/ingredientes/${id}`)
+      axios.get(`https://precificacaounivesp-4deb95d7eb80.herokuapp.com/${tipo}/ingredientes/${id}`)
         .then((responseIngredientes) => {
           console.log(responseIngredientes.data);
           console.log(tipo);
@@ -73,7 +73,7 @@ export function CardsPrecificacao({ receitas, custos }) {
               return;
           }
   
-          axios.get(`http://localhost:3001/custos/calculados/664a532ca0f3f3c984ece916`)
+          axios.get(`https://precificacaounivesp-4deb95d7eb80.herokuapp.com/custos/calculados/664a532ca0f3f3c984ece916`)
             .then((responseCustos) => {
               console.log(responseCustos.data);
   
@@ -102,7 +102,7 @@ export function CardsPrecificacao({ receitas, custos }) {
               console.log('Custo total da receita:', custoTotal);
   
   
-              axios.put(`http://localhost:3001/${tipo}/preco/${id}`, {
+              axios.put(`https://precificacaounivesp-4deb95d7eb80.herokuapp.com/${tipo}/preco/${id}`, {
                 preco: custoTotal
               })
                 .then((response) => {

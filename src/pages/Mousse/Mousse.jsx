@@ -30,7 +30,7 @@ export function Mousse(){
 
     function onSubmit(data) {
         axios
-            .put(`http://localhost:3001/mousse/664a3f79ef45df898486743e`, {
+            .put(`https://precificacaounivesp-4deb95d7eb80.herokuapp.com/mousse/664a3f79ef45df898486743e`, {
                 ingredientes: {
                     ...mousse.ingredientes,
                     ...data
@@ -47,7 +47,7 @@ export function Mousse(){
     
     
     useEffect(() =>{
-        axios.get(`http://localhost:3001/mousse/664a3f79ef45df898486743e`)
+        axios.get(`https://precificacaounivesp-4deb95d7eb80.herokuapp.com/mousse/664a3f79ef45df898486743e`)
             .then((response) =>{
                 setMousse(response.data);
                 const {

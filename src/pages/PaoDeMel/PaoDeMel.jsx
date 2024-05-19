@@ -32,7 +32,7 @@ export function PaoDeMel(){
 
     function onSubmit(data) {
         axios
-            .put(`http://localhost:3001/paodemel/664a3d361f57863653e7cb7a`, {
+            .put(`https://precificacaounivesp-4deb95d7eb80.herokuapp.com/paodemel/664a3d361f57863653e7cb7a`, {
                 ingredientes: {
                     ...paoDeMel.ingredientes,
                     ...data
@@ -49,7 +49,7 @@ export function PaoDeMel(){
     
     
     useEffect(() =>{
-        axios.get(`http://localhost:3001/paodemel/664a3d361f57863653e7cb7a`)
+        axios.get(`https://precificacaounivesp-4deb95d7eb80.herokuapp.com/paodemel/664a3d361f57863653e7cb7a`)
             .then((response) =>{
                 setPaoDeMel(response.data);
                 const {

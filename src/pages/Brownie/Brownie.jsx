@@ -33,7 +33,7 @@ export function Brownie(){
     function onSubmit(data) {
         console.log(data)
         axios
-            .put(`http://localhost:3001/brownie/6631bcdea98aaf64bb5a61d9`, {
+            .put(`https://precificacaounivesp-4deb95d7eb80.herokuapp.com/brownie/6631bcdea98aaf64bb5a61d9`, {
                 ingredientes: {
                     ...brownie.ingredientes,
                     ...data
@@ -50,7 +50,7 @@ export function Brownie(){
     
     
     useEffect(() =>{
-        axios.get(`http://localhost:3001/brownie/6631bcdea98aaf64bb5a61d9`)
+        axios.get(`https://precificacaounivesp-4deb95d7eb80.herokuapp.com/brownie/6631bcdea98aaf64bb5a61d9`)
             .then((response) =>{
                 setBrownie(response.data);
                 const {
