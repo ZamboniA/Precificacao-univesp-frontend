@@ -2,7 +2,7 @@ main {
   font-family: 'Courier New', Courier, monospace;
   background-color: #f7c5d1;
   width: 100vw;
-  height: 100vh;
+  height: 100%;
 }
 
 .main-ingredientes{
@@ -10,12 +10,13 @@ main {
   align-items: center;
   justify-content: center;
   width: 100%;
+  height: 110vh;
+  padding-bottom: 50px;
 }
 
 .container-ingredientes{
   margin-top: 5%;
   width: 50%;
-  height: 90%;
   border: 2px solid #503327;
   border-radius: 15px;
   background: linear-gradient(135deg, #f29eb2, #f7c5d1); 
@@ -40,12 +41,19 @@ main {
 }
 
 .button-ingredientes{
-  width: 200px;
-  height: 40px;
-  background-color: #503327;
-  border-radius: 10px;
-  border: 1px solid #503327;
-  color: #f7c5d1;
-  font-size: 17px;
-  font-weight: bold;
+  width: 240px !important;
+  height: 40px !important;
+  background-color: #503327 !important;
+  border-radius: 10px !important;
+  border: 1px solid #503327 !important;
+  color: #f7c5d1 !important;
+  font-size: 17px !important;
+  font-weight: bold !important;
+}
+
+
+.subtitulo{
+  width: 70%;
+  margin-top: 15px;
+  text-align: start;
 }

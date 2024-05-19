@@ -14,7 +14,7 @@ export function PaoDeMel(){
             manteiga: "",
             acucar: "",
             farinhaDeTrigo: "",
-            sal: "",
+            baunilha: "",
             ovos: ""
         }
     });
@@ -32,7 +32,7 @@ export function PaoDeMel(){
 
     function onSubmit(data) {
         axios
-            .put(`http://localhost:3001/paodemel/6631c260f23829ebe981f42b`, {
+            .put(`http://localhost:3001/paodemel/664a3d361f57863653e7cb7a`, {
                 ingredientes: {
                     ...paoDeMel.ingredientes,
                     ...data
@@ -49,7 +49,7 @@ export function PaoDeMel(){
     
     
     useEffect(() =>{
-        axios.get(`http://localhost:3001/paodemel/6631c260f23829ebe981f42b`)
+        axios.get(`http://localhost:3001/paodemel/664a3d361f57863653e7cb7a`)
             .then((response) =>{
                 setPaoDeMel(response.data);
                 const {
@@ -63,7 +63,7 @@ export function PaoDeMel(){
                         cravoPo,
                         acucar,
                         farinhaDeTrigo,
-                        sal,
+                        baunilha,
                         ovos
                     }
                 } = response.data;
@@ -78,7 +78,7 @@ export function PaoDeMel(){
                         cravoPo,
                         acucar,
                         farinhaDeTrigo,
-                        sal,
+                        baunilha,
                         ovos
                     }
                 })
@@ -249,18 +249,18 @@ export function PaoDeMel(){
 
                         <Form.Group>
                             <InputGroup>
-                                <Form.Label>Sal:</Form.Label>
+                                <Form.Label>Essência de baunilha:</Form.Label>
                                 <Form.Control
-                                    {...register("sal", { 
+                                    {...register("baunilha", { 
                                         required: true,
                                         pattern: {
                                             value: /^\d+(\.\d{1,2})?$/,
                                             message: "Insira um valor válido com no máximo duas casas decimais."
                                         } 
                                     })}
-                                    defaultValue={typeof paoDeMel.ingredientes.sal === 'number' ? `${parseFloat(paoDeMel.ingredientes.sal).toFixed(2)}` : ""}
+                                    defaultValue={typeof paoDeMel.ingredientes.baunilha === 'number' ? `${parseFloat(paoDeMel.ingredientes.baunilha).toFixed(2)}` : ""}
                                 />
-                                {errors.sal && <span>{errors.sal.message}</span>}
+                                {errors.baunilha && <span>{errors.baunilha.message}</span>}
                             </InputGroup>
                         </Form.Group>
 

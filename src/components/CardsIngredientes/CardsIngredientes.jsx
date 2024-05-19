@@ -1,8 +1,8 @@
-import './card.css';
+import './cardsIngredientes.css';
 import { Loader } from '../Loader/Loader';
 import { useNavigate } from 'react-router-dom';
 
-export function Card( {receitas} ) {
+export function CardsIngredientes( {receitas} ) {
   const navigate = useNavigate();
 
   const handleClick = (tipo) => {
@@ -22,7 +22,7 @@ export function Card( {receitas} ) {
               </div>
               <div className="body-card">
                 <img src={receita.imagemUrl} className='card-imagem' alt="Logo" />
-                <button onClick={() => handleClick(receita.tipo)}>Clique aqui!</button>
+                <button onClick={() => handleClick(receita.tipo)}>Ingredientes aqui!</button>
               </div>
             </article>
           </div>

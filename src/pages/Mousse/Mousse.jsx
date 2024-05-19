@@ -30,7 +30,7 @@ export function Mousse(){
 
     function onSubmit(data) {
         axios
-            .put(`http://localhost:3001/mousse/6631bd0ae2ed55d6f3124d0b`, {
+            .put(`http://localhost:3001/mousse/664a3f79ef45df898486743e`, {
                 ingredientes: {
                     ...mousse.ingredientes,
                     ...data
@@ -47,7 +47,7 @@ export function Mousse(){
     
     
     useEffect(() =>{
-        axios.get(`http://localhost:3001/mousse/6631bd0ae2ed55d6f3124d0b`)
+        axios.get(`http://localhost:3001/mousse/664a3f79ef45df898486743e`)
             .then((response) =>{
                 setMousse(response.data);
                 const {
