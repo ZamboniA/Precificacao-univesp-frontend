@@ -14,7 +14,7 @@ export function Ingredientes(){
 
 
     function initializeTable(){
-        axios.get(`https://precificacaounivesp-4deb95d7eb80.herokuapp.com/todos-itens`)
+        axios.get(`https://precificacaounivesp-4deb95d7eb80.herokuapp.com/todositens`)
             .then((response) =>{
                 setReceita(response.data);
             })

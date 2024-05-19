@@ -15,14 +15,14 @@ export function Home(){
 
 
     function initializeTable(){
-        axios.get(`https://precificacaounivesp-4deb95d7eb80.herokuapp.com/todos-itens`)
+        axios.get(`https://precificacaounivesp-4deb95d7eb80.herokuapp.com/todositens`)
             .then((response) =>{
                 setReceita(response.data);
             })
             .catch((error) =>{
                 console.log(error);
             })
-        axios.get(`https://precificacaounivesp-4deb95d7eb80.herokuapp.com/custos/664a532ca0f3f3c984ece916`)
+        axios.get(`https://precificacaounivesp-4deb95d7eb80.herokuapp.com/todositens`)
         .then((response) => {
             setCustos(response.data);
         })
