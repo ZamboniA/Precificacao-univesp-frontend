@@ -15,7 +15,6 @@ export function Custos(){
         etiqueta: "",
         custoFixo: "",
         custoVariaveis: "",
-        limpeza: ""
     });
     
     const {
@@ -45,22 +44,42 @@ export function Custos(){
     useEffect(() => {
         axios.get(`https://precificacaounivesp-4deb95d7eb80.herokuapp.com/custos/664a532ca0f3f3c984ece916`)
             .then((response) => {
-                const data = response.data[0];
-                setCustos(data);
+                setCustos(response.data);
+                const {
+                    cobertura,
+                    recheio,
+                    sacosPlasticos,
+                    fita,
+                    etiqueta,
+                    custoFixo,
+                    custoVariaveis
+                } = response.data;
+    
+                const formattedCustos = {
+                    cobertura: cobertura.toFixed(2),
+                    recheio: recheio.toFixed(2),
+                    sacosPlasticos: sacosPlasticos.toFixed(2),
+                    fita: fita.toFixed(2),
+                    etiqueta: etiqueta.toFixed(2),
+                    custoFixo: custoFixo.toFixed(2),
+                    custoVariaveis: custoVariaveis.toFixed(2)
+                };
+    
                 reset({
-                    cobertura: parseFloat(data.cobertura).toFixed(2),
-                    recheio: parseFloat(data.recheio).toFixed(2),
-                    sacosPlasticos: parseFloat(data.sacosPlasticos).toFixed(2),
-                    fita: parseFloat(data.fita).toFixed(2),
-                    etiqueta: parseFloat(data.etiqueta).toFixed(2),
-                    custoFixo: parseFloat(data.custoFixo).toFixed(2),
-                    custoVariaveis: parseFloat(data.custoVariaveis).toFixed(2),
+                    cobertura: formattedCustos.cobertura,
+                    recheio: formattedCustos.recheio,
+                    sacosPlasticos: formattedCustos.sacosPlasticos,
+                    fita: formattedCustos.fita,
+                    etiqueta: formattedCustos.etiqueta,
+                    custoFixo: formattedCustos.custoFixo,
+                    custoVariaveis: formattedCustos.custoVariaveis
                 });
             })
             .catch((error) => {
                 console.log(error);
             });
     }, [reset]);
+    
     
     
     
