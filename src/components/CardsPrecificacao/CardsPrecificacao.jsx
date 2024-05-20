@@ -175,17 +175,17 @@ export function CardsPrecificacao({ receitas, custos }) {
         onHide={handleCloseModal}
       >
         <Modal.Header closeButton>
-          <Modal.Title>Confirmar Atualização</Modal.Title>
+          <Modal.Title>Confirmar precificação?</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          Tem certeza de que deseja atualizar os ingredientes e custos?
+          Você gostaria de atualizar os ingredientes ou custos? Ou prefere precificar? 
         </Modal.Body>
         <Modal.Footer>
           <Button className='button-ingredientes' onClick={handleUpdateModal}>
-            Atualizar
+            Atualizar!
           </Button>
           <Button className='button-ingredientes' onClick={handleConfirmUpdate}>
-            Confirmar
+            Precificar!
           </Button>
         </Modal.Footer>
       </Modal>
