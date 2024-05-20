@@ -44,7 +44,8 @@ export function Custos(){
     useEffect(() => {
         axios.get(`https://precificacaounivesp-4deb95d7eb80.herokuapp.com/custos/664a532ca0f3f3c984ece916`)
             .then((response) => {
-                setCustos(response.data);    
+                setCustos(response.data[0]);
+                console.log(custos)   
                 const formattedCustos = {
                     cobertura: custos.cobertura.toFixed(2),
                     recheio: custos.recheio.toFixed(2),
