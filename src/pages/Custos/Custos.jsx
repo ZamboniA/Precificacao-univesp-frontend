@@ -44,25 +44,15 @@ export function Custos(){
     useEffect(() => {
         axios.get(`https://precificacaounivesp-4deb95d7eb80.herokuapp.com/custos/664a532ca0f3f3c984ece916`)
             .then((response) => {
-                setCustos(response.data);
-                const {
-                    cobertura,
-                    recheio,
-                    sacosPlasticos,
-                    fita,
-                    etiqueta,
-                    custoFixo,
-                    custoVariaveis
-                } = response.data;
-    
+                setCustos(response.data);    
                 const formattedCustos = {
-                    cobertura: cobertura.toFixed(2),
-                    recheio: recheio.toFixed(2),
-                    sacosPlasticos: sacosPlasticos.toFixed(2),
-                    fita: fita.toFixed(2),
-                    etiqueta: etiqueta.toFixed(2),
-                    custoFixo: custoFixo.toFixed(2),
-                    custoVariaveis: custoVariaveis.toFixed(2)
+                    cobertura: custos.cobertura.toFixed(2),
+                    recheio: custos.recheio.toFixed(2),
+                    sacosPlasticos: custos.sacosPlasticos.toFixed(2),
+                    fita: custos.fita.toFixed(2),
+                    etiqueta: custos.etiqueta.toFixed(2),
+                    custoFixo: custos.custoFixo.toFixed(2),
+                    custoVariaveis: custos.custoVariaveis.toFixed(2)
                 };
     
                 reset({
@@ -82,8 +72,6 @@ export function Custos(){
     
     
     
-    
-
     return(
         <>
             <div className="main-ingredientes">
