@@ -44,32 +44,27 @@ export function Custos(){
     useEffect(() => {
         axios.get(`https://precificacaounivesp-4deb95d7eb80.herokuapp.com/custos/664a532ca0f3f3c984ece916`)
             .then((response) => {
-                setCustos(response.data[0]);
-                console.log(custos)   
+                console.log(response.data);  // Verifique a estrutura dos dados recebidos
+                const receivedCustos = response.data[0];
+                setCustos(receivedCustos);
+
                 const formattedCustos = {
-                    cobertura: custos.cobertura.toFixed(2),
-                    recheio: custos.recheio.toFixed(2),
-                    sacosPlasticos: custos.sacosPlasticos.toFixed(2),
-                    fita: custos.fita.toFixed(2),
-                    etiqueta: custos.etiqueta.toFixed(2),
-                    custoFixo: custos.custoFixo.toFixed(2),
-                    custoVariaveis: custos.custoVariaveis.toFixed(2)
+                    cobertura: receivedCustos.cobertura ? receivedCustos.cobertura.toFixed(2) : "",
+                    recheio: receivedCustos.recheio ? receivedCustos.recheio.toFixed(2) : "",
+                    sacosPlasticos: receivedCustos.sacosPlasticos ? receivedCustos.sacosPlasticos.toFixed(2) : "",
+                    fita: receivedCustos.fita ? receivedCustos.fita.toFixed(2) : "",
+                    etiqueta: receivedCustos.etiqueta ? receivedCustos.etiqueta.toFixed(2) : "",
+                    custoFixo: receivedCustos.custoFixo ? receivedCustos.custoFixo.toFixed(2) : "",
+                    custoVariaveis: receivedCustos.custoVariaveis ? receivedCustos.custoVariaveis.toFixed(2) : ""
                 };
-    
-                reset({
-                    cobertura: formattedCustos.cobertura,
-                    recheio: formattedCustos.recheio,
-                    sacosPlasticos: formattedCustos.sacosPlasticos,
-                    fita: formattedCustos.fita,
-                    etiqueta: formattedCustos.etiqueta,
-                    custoFixo: formattedCustos.custoFixo,
-                    custoVariaveis: formattedCustos.custoVariaveis
-                });
+
+                reset(formattedCustos);
             })
             .catch((error) => {
                 console.log(error);
             });
     }, [reset]);
+
     
     
     
