@@ -5,6 +5,11 @@ import './cardsPrecificacao.css';
 import { Loader } from '../Loader/Loader';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import brownieImg from './../../assets/img/brownie.jpg';
+import mousseImg from './../../assets/img/mousse.jpg';
+import paodemelImg from './../../assets/img/paodemel.jpg';
+
+
 
 export function CardsPrecificacao({ receitas, custos }) {
   const navigate = useNavigate();
@@ -128,7 +133,19 @@ export function CardsPrecificacao({ receitas, custos }) {
   };
   
   
-  
+  const validacaoVariaveis = (tipo) => {
+    switch (tipo) {
+      case 'mousse':
+        return mousseImg;
+      case 'brownie':
+        return brownieImg;
+      case 'paodemel':
+        return paodemelImg;
+      default:
+        return ''; // ou uma imagem padrão se quiser
+    }
+  };
+
   
   
   
@@ -145,7 +162,7 @@ export function CardsPrecificacao({ receitas, custos }) {
                 <h1>{receita.nome}</h1>
               </div>
               <div className="body-precificacao">
-                <img src={receita.imagemUrl} className='card-imagem' alt="Logo" />
+              <img src={validacaoVariaveis(receita.tipo)} className="card-imagem" alt={receita.nome} />         
                 <p className='card-precificacao'>R$ {parseFloat(receita.preco).toFixed(2)}</p>
                 <button onClick={() => handleClick(index)}>Precifique Aqui!</button>
               </div>
